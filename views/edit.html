@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>小案例crud</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <h2 class="sub-header">编辑学生</h2>
+    <p></p>
+    <form action="/students/edit" method="post">
+      <input type="hidden" type="number" name="id" value="{{ student.id }}" >
+      <div class="form-group">
+        <label for="">姓名</label>
+        <input type="text" class="form-control" id="" name="name" value="{{ student.name }}" required minlength="2"
+          maxlength="10">
+      </div>
+      <div class="form-group">
+        <label for="">性别</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="" value="0" {{ boy }}> 男
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="" value="1" {{ girl }} > 女
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">年龄</label>
+        <input type="text" class="form-control" value="{{ student.age }}" id="" name="age" required min="1" max="150">
+      </div>
+      <div class="form-group">
+        <label for="">爱好</label>
+        <input class="form-control" type="text" id="" value="{{ student.hobbies }}" name="hobbies">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
